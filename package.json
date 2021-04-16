@@ -1,0 +1,23 @@
+{
+  "name": "toxin",
+  "version": "1.0.0",
+  "description": "hotel room search site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aalplotnikov/toxin.git"
+  },
+  "author": "Andrey Plotnikov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aalplotnikov/toxin/issues"
+  },
+  "homepage": "https://github.com/aalplotnikov/toxin#readme",
+  "devDependencies": {
+    "webpack": "^5.33.2",
+    "webpack-cli": "^4.6.0"
+  }
+}

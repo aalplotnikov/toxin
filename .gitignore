@@ -1,0 +1,9 @@
+# Default
+.idea
+.vscode
+
+# Node
+node_modules
+
+# Dist
+dist
