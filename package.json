@@ -4,7 +4,8 @@
   "description": "hotel room search site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "dev": "webpack serve --open"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/aalplotnikov/toxin#readme",
   "devDependencies": {
+    "path": "^0.12.7",
     "webpack": "^5.33.2",
     "webpack-cli": "^4.6.0"
   }
