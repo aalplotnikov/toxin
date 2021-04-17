@@ -33,7 +33,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(scss)$/,
+        test: /\.(scss|css)$/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
@@ -75,7 +75,7 @@ module.exports = {
     ),
     new CopyWebpackPlugin({
       patterns: [
-        { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+        // { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
         { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
         // { from: `${PATHS.src}/static`, to: "" },
       ]
