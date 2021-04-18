@@ -1,4 +1,23 @@
 .header
   .container
-    a.logo(href="#") 
-      img(src="assets/img/logo.svg")
+    .left
+      a.logo(href="#") 
+        img(src="assets/img/logo.svg")
+    .right
+      nav.navigation 
+        ul.menu 
+          li.menu__list 
+            a.menu__link(href="#0", title="О нас") О нас
+          li.menu__list
+            a.menu__link(href="#0", title="Услугиdr") Услуги
+              img.menu__drop(src="assets/img/expand_more.svg", alt="")
+          li.menu__list
+            a.menu__link(href="#0", title="Вакании") Вакании
+          li.menu__list
+            a.menu__link(href="#0", title="Новости") Новости
+          li.menu__list
+            a.menu__link(href="#0", title="Соглашенияdr") Соглашения
+              img.menu__drop(src="assets/img/expand_more.svg", alt="")
+      .button
+        a.login(href="#") войти
+        a.reg(href="#") зарегистрироваться
