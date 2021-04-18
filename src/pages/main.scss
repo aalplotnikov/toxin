@@ -3,6 +3,7 @@
 
 body {min-width: 1200px;}
 p, body{
+  margin: 0;
   font-family: $mainFont;
   font-size: 14px;
   line-height: 24px;
@@ -10,6 +11,7 @@ p, body{
 }
 
 h1 {
+  margin: 0;
   font-family: $mainFont;
   font-weight: bold;
   font-size: 24px;
@@ -17,6 +19,7 @@ h1 {
   color: $Dark_Shade;
 }
 h2 {
+  margin: 0;
   font-family: $mainFont;
   font-weight: bold;
   font-size: 19px;
@@ -24,6 +27,7 @@ h2 {
   color: $Dark_Shade;
 }
 h3 {
+  margin: 0;
   font-family: $mainFont;
   font-weight: bold;
   font-size: 12px;
@@ -34,6 +38,7 @@ h3 {
 
 @import "../blocks/header/header";
 @import "../blocks/content/content";
+@import "../blocks/search/search";
 @import "../blocks/footer/footer";
 
 
