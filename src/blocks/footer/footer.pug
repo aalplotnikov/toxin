@@ -1,0 +1,36 @@
+mixin list(item)
+  ul.information__list
+    each element in item
+      li.information__item
+        a.information__link(href="#")= element
+
+.footer 
+  .container
+    .description
+      a.description__logo(href="#") 
+        img(src="assets/img/logo.svg")
+      p.description__text Бронирование номеров в лучшем<br> отеле 2019 года по версии<br> ассоциации «Отельные взгляды»
+    .information 
+      +list(["навигация", "О нас", "Новости", "Служба поддержки", "Услуги"])
+      +list(["о нас", "О сервисе", "Наша команда", "Вакансии", "Инвесторы"])
+      +list(["Служба поддержки", "Соглашения", "Сообщества", "Связь с нами"])
+      ul.information__list
+        li.information__item
+          a.information__link(href="#") Подписка
+        li.information__item
+          a.information__link(href="#") Получайте специальные<br>предложения и новости сервиса
+        li.information__item
+          .information__mail
+            input.information__input(type="email", name="", placeholder="Email")
+            a.information__mail__link(href="#") 
+              img(src="assets/img/send.svg", alt="")
+.footer__bottom
+  .container
+    .bottom__left Copyright © 2018 Toxin отель. Все права защищены.
+    .bottom__right 
+      a.bottom__link(href="#")
+        img.bottom__right__logo(src="assets/img/twitter.png")
+      a.bottom__link(href="#")
+        img.bottom__right__logo(src="assets/img/facebook.png")
+      a.bottom__link(href="#")
+        img.bottom__right__logo(src="assets/img/instagram.png")
