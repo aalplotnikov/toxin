@@ -1,9 +1,7 @@
 @import "../utils/fonts";
 @import "../utils/vars";
 
-@import "../blocks/header/header";
-@import "../blocks/footer/footer";
-
+body {min-width: 1200px;}
 p, body{
   font-family: $mainFont;
   font-size: 14px;
@@ -33,6 +31,12 @@ h3 {
   text-transform: uppercase;
   color: $Dark_Shade;
 }
+
+@import "../blocks/header/header";
+@import "../blocks/content/content";
+@import "../blocks/footer/footer";
+
+
 
 
 

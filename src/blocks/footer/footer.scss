@@ -1,5 +1,5 @@
 .footer {
-  padding: 100px 0;
+  padding: 100px 0 83px;
   display: flex;
   justify-content: space-between;
 }
@@ -17,7 +17,7 @@
 }
 
 .description__text {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .information {
@@ -39,7 +39,7 @@
 }
 
 .information__item {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 .information__item:first-of-type .information__link {
   font-family: $mainFont;
@@ -54,6 +54,7 @@
   height: 44px;
   min-width: 260px;
   line-height: 44px;
+  margin-top: 22px;
   border: 1px solid $Dark_Shade_25;
   box-sizing: border-box;
   border-radius: 4px;
@@ -96,5 +97,7 @@
 }
 
 .bottom__link {
-  margin-left: 20px;
+  display: inline-block;
+  margin-top: 6px;
+  margin-left: 23px;
 }

@@ -25,6 +25,18 @@ module.exports = {
     path: PATHS.dist,
     publicPath: "/",
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'vendors',
+          test: /node_modules/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
+  },
   devServer: {
     contentBase: PATHS.dist,
     port: 8081,
@@ -64,7 +76,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}css/'[name].css`
+      filename: `${PATHS.assets}css/[name].css`
     }),
     ...PAGES.map(
       page =>
