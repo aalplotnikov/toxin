@@ -1,6 +1,6 @@
 .search
   h1 Найдём номера под ваши пожелания
-  .search__content 
+  .search__content.active
     .search__in 
       h3 Прибытие
       .search__input ДД.ММ.ГГГГ
@@ -9,6 +9,7 @@
       h3 Выезд
       .search__input ДД.ММ.ГГГГ
         img.search__drop(src="assets/img/expand_more.svg")
+    include ../calendar/calendar.pug
   h3 Гости
   .search__select Сколько гостей
     img.search__drop(src="assets/img/expand_more.svg")

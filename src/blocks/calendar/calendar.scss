@@ -1,0 +1,92 @@
+.calendar {
+  display: none;
+  position: absolute;
+  width: 320px;
+  height: 369px;
+  top: 70px;
+  background: #FFFFFF;
+  border: 1px solid $Dark_Shade_25;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.calendar__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar__month {
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 23px;
+  color: $Dark_Shade;
+}
+
+.calendar__table {
+  margin: 28px 0 0 0;
+  padding: 0;
+}
+
+.calendar__table__header {
+  padding: 0;
+  width: 40px;
+  height: 38px;
+  font-size: 12px;
+  line-height: 15px;
+  align-items: center;
+  text-align: center;
+  color: $Purple;
+}
+
+.calendar__date {
+  padding: 0;
+  width: 40px;
+  height: 38px;
+  line-height: 15px;
+  align-items: center;
+  text-align: center;
+  color: $Dark_Shade_75;
+}
+
+.calendar__another-month {
+  padding: 0;
+  width: 40px;
+  height: 38px;
+  font-size: 12px;
+  line-height: 15px;
+  align-items: center;
+  text-align: center;
+  color: $Dark_Shade_25;
+}
+
+.calendar__current-day {
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border-radius: 22px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.calendar__footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar__clear {
+  padding: 20px 20px 0 0;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $Purple;
+}
+
+.calendar__entry {
+  padding: 20px 0 0 20px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $Purple;
+}
