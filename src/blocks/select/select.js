@@ -23,7 +23,7 @@ const changeGuest = function (element, number) {
     element.textContent = 'Сколько гостей';
   } else if (number % 100 > 4 && number % 100 < 21) {
     element.textContent = number + ' гостей';
-  } else if (number % 10 > 4) {
+  } else if (number % 10 > 4 || number % 10 === 0) {
     element.textContent = number + ' гостей';
   } else if (number % 10 == 1 && number % 100 != 11) {
     element.textContent = number + ' гость';
