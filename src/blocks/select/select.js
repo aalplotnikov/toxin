@@ -4,10 +4,12 @@ const minusChildren = document.querySelector('.minus-children');
 const plusChildren = document.querySelector('.plus-children');
 const minusBaby = document.querySelector('.minus-baby');
 const plusBaby = document.querySelector('.plus-baby');
-const grown = document.querySelector('.grown')
-const children = document.querySelector('.children')
-const baby = document.querySelector('.baby')
-const select = document.querySelector('.search__select')
+const grown = document.querySelector('.grown');
+const children = document.querySelector('.children');
+const baby = document.querySelector('.baby');
+const select = document.querySelector('.search__select');
+const clearSelect = document.querySelector('.select__clear');
+const selectEntry = document.querySelector('.select__entry');
 
 let countGuest = 0;
 let countGrown = 0;
@@ -16,7 +18,7 @@ let countBaby = 0;
 
 const change = function (element, number) {
   element.textContent = number;
-}
+};
 
 const changeGuest = function (element, number) {
   if (number === 0) {
@@ -30,7 +32,7 @@ const changeGuest = function (element, number) {
   } else {
     element.textContent = number + ' гостя';
   }
-}
+};
 
 minusGrown.onclick = function () {
   if (countGrown !== 0) {
@@ -39,14 +41,14 @@ minusGrown.onclick = function () {
   }
   change(grown, countGrown);
   changeGuest(select, countGuest);
-}
+};
 
 plusGrown.onclick = function () {
   countGuest++;
   countGrown++;
   change(grown, countGrown);
   changeGuest(select, countGuest);
-}
+};
 
 minusChildren.onclick = function () {
   if (countChildren !== 0) {
@@ -55,14 +57,14 @@ minusChildren.onclick = function () {
   }
   change(children, countChildren);
   changeGuest(select, countGuest);
-}
+};
 
 plusChildren.onclick = function () {
   countGuest++;
   countChildren++;
   change(children, countChildren);
   changeGuest(select, countGuest);
-}
+};
 
 minusBaby.onclick = function () {
   if (countBaby !== 0) {
@@ -71,11 +73,26 @@ minusBaby.onclick = function () {
   }
   change(baby, countBaby);
   changeGuest(select, countGuest);
-}
+};
 
 plusBaby.onclick = function () {
   countGuest++;
   countBaby++;
   change(baby, countBaby);
   changeGuest(select, countGuest);
+};
+
+clearSelect.onclick = function () {
+  countGuest = 0;
+  countGrown = 0;
+  countChildren = 0;
+  countBaby = 0;
+  changeGuest(select, countGuest);
+  change(grown, countGrown);
+  change(children, countChildren);
+  change(baby, countBaby);
+};
+
+selectEntry.onclick = function () {
+  document.querySelector(".search").classList.remove("drop-select");
 }
