@@ -22,6 +22,7 @@
 
 .select__right {
   display: flex;
+  width: 92px;
   justify-content: space-between;
   line-height: 0;
 }
@@ -35,17 +36,18 @@
   color: $Dark_Shade_25;
   border: 1px solid $Dark_Shade_25;
   box-sizing: border-box;
-  border-radius: 22px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .select__number {
   font-weight: bold;
+  width: 32px;
   font-size: 12px;
   line-height: 30px;
   text-align: center;
   text-transform: uppercase;
   color: $Dark_Shade;
-  margin: 0 12px;
 }
 
 .select__footer {
