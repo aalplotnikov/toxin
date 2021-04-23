@@ -1,116 +1,87 @@
 const day = new Date();
 const calendarMonth = document.querySelector('.calendar__month');
-let birthday = new Date(2021, 3, 32);
+const calendarBody = document.querySelector('.calendar__body');
+const calendarForward = document.querySelector('.calendar__forward');
+const calendarBack = document.querySelector('.calendar__back');
 
-day.setDate(1);
 
-getCalendarMonth = function (element, day) {
+let getCalendarMonth = function (element, date) {
   const month = ['Январь', 'Февраль', 'Март', 'Апрель',
     'Май', 'Июнь', 'Июль', 'Август',
     'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
-  element.textContent = `${month[day.getMonth()]} ${day.getFullYear()}`;
+  element.textContent = `${month[date.getMonth()]} ${date.getFullYear()}`;
+};
+
+let getDay = function (date) {
+  let day = date.getDay();
+  if (day == 0) day = 7;
+  return day - 1;
 }
 
+let createCalendar = function (element, date) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = new Date(year, month);
+  const valueDay = getDay(day);
+  let tbody = '<tr>';
 
-
-createCalendar = function () {
-  const calendarBody = document.querySelector('.calendar__body')
-  day.setDate(1);
-  let month = day.getMonth();
+  day.setDate(-valueDay + 1)
+  for (let i = 0; i < valueDay; i++) {
+    tbody += `<td class="calendar__another-month">${day.getDate()}</td>`;
+    day.setDate(day.getDate() + 1);
+  }
 
   while (month === day.getMonth()) {
-    let tr = document.createElement('tr');
-    calendarBody.append(tr);
-    let i = 0
-    if (day.getDate() === 1 && day.getDay !== 1) {
-      calendarBody.append(tr);
-      switch (day.getDay()) {
-        case 0:
-          day.setDate(-5);
-          while (month !== day.getMonth()) {
-            let td = document.createElement('td');
-            td.className = 'calendar__another-month';
-            td.innerHTML = day.getDate();
-            tr.append(td);
-            day.setDate(day.getDate() + 1);
-            i++;
-          }
-          break;
-        case 2:
-          day.setDate(0);
-          while (month !== day.getMonth()) {
-            let td = document.createElement('td');
-            td.className = 'calendar__another-month';
-            td.innerHTML = day.getDate();
-            tr.append(td);
-            day.setDate(day.getDate() + 1);
-            i++;
-          }
-          break;
-        case 3:
-          day.setDate(-1);
-          while (month !== day.getMonth()) {
-            let td = document.createElement('td');
-            td.className = 'calendar__another-month';
-            td.innerHTML = day.getDate();
-            tr.append(td);
-            day.setDate(day.getDate() + 1);
-            i++;
-          }
-          break;
-        case 4:
-          day.setDate(-2);
-          while (month !== day.getMonth()) {
-            let td = document.createElement('td');
-            td.className = 'calendar__another-month';
-            td.innerHTML = day.getDate();
-            tr.append(td);
-            day.setDate(day.getDate() + 1);
-            i++;
-          }
-          break;
-        case 5:
-          day.setDate(-3);
-          while (month !== day.getMonth()) {
-            let td = document.createElement('td');
-            td.className = 'calendar__another-month';
-            td.innerHTML = day.getDate();
-            tr.append(td);
-            day.setDate(day.getDate() + 1);
-            i++;
-          }
-          break;
-        case 6:
-          day.setDate(-4);
-          while (month !== day.getMonth()) {
-            let td = document.createElement('td');
-            td.className = 'calendar__another-month';
-            td.innerHTML = day.getDate();
-            tr.append(td);
-            day.setDate(day.getDate() + 1);
-            i++;
-          }
-          break;
-      }
+    if (new Date().getDate() === day.getDate() && new Date().getMonth() === day.getMonth() && new Date().getFullYear() === day.getFullYear()) {
+      tbody += `<td class="calendar__date calendar__current-day">${day.getDate()}</td>`;
+    } else {
+      tbody += `<td class="calendar__date">${day.getDate()}</td>`;
     }
-    for (; i < 7; i++) {
-      let td = document.createElement('td');
-      td.className = 'calendar__date';
-      td.innerHTML = day.getDate();
-      tr.append(td);
-      if (month !== day.getMonth()) {
-        td.className = 'calendar__another-month';
-      }
-      if (day.getDate() === new Date().getDate())
-        td.className = 'calendar__date calendar__current-day';
+    if (day.getDay() === 0) {
+      tbody += '</tr><tr>';
+    }
+    day.setDate(day.getDate() + 1);
+  }
+  if (day.getDay() !== 1) {
+    for (let i = getDay(day); i < 7; i++) {
+      tbody += `<td class="calendar__another-month">${day.getDate()}</td>`;
       day.setDate(day.getDate() + 1);
     }
   }
-}
+
+  tbody += '</tr>';
+  element.innerHTML = tbody;
+};
+
+calendarForward.onclick = function () {
+  day.setMonth(day.getMonth() + 1);
+  getCalendarMonth(calendarMonth, day);
+  createCalendar(calendarBody, day);
+};
+
+calendarBack.onclick = function () {
+  day.setMonth(day.getMonth() - 1);
+  getCalendarMonth(calendarMonth, day);
+  createCalendar(calendarBody, day);
+};
 
 getCalendarMonth(calendarMonth, day);
-createCalendar();
+createCalendar(calendarBody, day);
 
-console.log(day)
-console.log(birthday)
-console.log(day);
+const tdCurentMonth = document.querySelectorAll('.calendar__date');
+
+
+function zam() {
+  let click = 0;
+  return function () { return click++ };
+}
+
+let fun = zam();
+
+
+for (let i = 0; i < tdCurentMonth.length; i++) {
+  tdCurentMonth[i].onclick = function () {
+    let select = `${String(this.innerHTML).padStart(2, '0')}.${String(day.getMonth() + 1).padStart(2, '0')}.${day.getFullYear()}`;
+    console.log(fun());
+  };
+}

@@ -24,6 +24,10 @@
   color: $Dark_Shade;
 }
 
+.calendar__back, .calendar__forward {
+  cursor: pointer;
+}
+
 .calendar__table {
   margin: 28px 0 0 0;
   padding: 0;
@@ -35,7 +39,6 @@
   width: 40px;
   height: 40px;
   font-size: 12px;
-  line-height: 15px;
   align-items: center;
   text-align: center;
   color: $Purple;
@@ -46,10 +49,10 @@
   margin: 0;
   width: 40px;
   height: 40px;
-  line-height: 15px;
   align-items: center;
   text-align: center;
   color: $Dark_Shade_75;
+  cursor: pointer;
 }
 
 .calendar__another-month {
@@ -58,10 +61,10 @@
   width: 40px;
   height: 40px;
   font-size: 12px;
-  line-height: 15px;
   align-items: center;
   text-align: center;
   color: $Dark_Shade_25;
+  cursor: pointer;
 }
 
 .calendar__current-day {
@@ -69,6 +72,22 @@
   border-radius: 50%;
   font-weight: bold;
   color: #FFFFFF;
+}
+
+.calendar__select {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(180deg, $Purple 0%, #8BA4F9 100%);
+  opacity: 0.25;
+  color: $Dark_Shade_50;
+}
+
+.calendar__select-in, .calendar__select-out {
+  background: linear-gradient(180deg, $Purple 0%, #8BA4F9 100%);
+  border-radius: 50%;
+  font-weight: bold;
+  color: #FFFFFF;
+  opacity: 1;
 }
 
 .calendar__footer {
